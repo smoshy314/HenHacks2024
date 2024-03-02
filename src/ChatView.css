@@ -1,0 +1,44 @@
+/* FILEPATH: /Users/joshuamartinez/Code/henhacks2024/src/ChatView.css */
+
+/* Chat container */
+.chat-container {
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #E9ecf5;
+  padding: 10px;
+}
+
+/* Chat message */
+.chat-message {
+  margin-bottom: 10px;
+}
+
+/* Sender name */
+.sender-name {
+  font-weight: bold;
+}
+
+/* Message text */
+.message-text {
+  margin-top: 5px;
+}
+
+/* Input area */
+.input-area {
+  margin-top: 10px;
+}
+
+/* Send button */
+.send-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Send button hover effect */
+.send-button:hover {
+  background-color: #0056b3;
+}
