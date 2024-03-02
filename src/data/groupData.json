@@ -1,7 +1,7 @@
 [
     {
         "name": "Assistive Medical Technologies",
-        "img": "src/images/AMT.jpg",
+        "img": "public/images/AMT.jpg",
         "joined": false,
         "chatlog": [
             {
@@ -13,7 +13,7 @@
     },
     {
         "name": "Disability Alliance",
-        "img": "src/images/DisAl.jpg",
+        "img": "public/images/DisAl.jpg",
         "joined": false,
         "chatlog": [
             {
@@ -25,7 +25,7 @@
     },
     {
         "name": "UD Housing Searchers",
-        "img": "src/images/UDHousing.jpg",
+        "img": "public/images/UDHousing.jpg",
         "joined": false,
         "chatlog": [
             {
@@ -37,7 +37,7 @@
     },
     {
         "name": "What's Happenin",
-        "img": "src/images/chat.jpg",
+        "img": "public/images/chat.jpg",
         "joined": false,
         "chatlog": [
             {
