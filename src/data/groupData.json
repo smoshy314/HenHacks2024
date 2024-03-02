@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Assistive Medical Technologies",
+        "img": "src/images/AMT.jpg",
+        "joined": false,
+        "chatlog": [
+            {
+                "username": "User1",
+                "message": "Hi! I'm from AMT!"
+            }
+        ]
+
+    },
+    {
+        "name": "Disability Alliance",
+        "img": "src/images/DisAl.jpg",
+        "joined": false,
+        "chatlog": [
+            {
+                "username": "User1",
+                "message": "Hi! I'm from Disability Alliance!"
+            }
+        ]
+
+    },
+    {
+        "name": "UD Housing Searchers",
+        "img": "src/images/UDHousing.jpg",
+        "joined": false,
+        "chatlog": [
+            {
+                "username": "User1",
+                "message": "Hi! I'm also looking for accessible housing!"
+            }
+        ]
+
+    },
+    {
+        "name": "What's Happenin",
+        "img": "src/images/chat.jpg",
+        "joined": false,
+        "chatlog": [
+            {
+                "username": "User1",
+                "message": "Hi! The ramp at gore is under construction but there's one at the drake side!"
+            }
+        ]
+
+    }
+]
