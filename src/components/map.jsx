@@ -9,10 +9,11 @@ export default function Map({ locData, setLocData,filterCriteria }) {
     const mapContainer = useRef(null);
     const locMap = useRef(null);
     const UDMapCenter = { lng: -75.751, lat: 39.678 }; 
-    const [zoom, setZoom] = useState(16);
+    const [zoom] = useState(16);
     maptilersdk.config.apiKey = '5lx0cHBnhSh4foOEes5E';
     const [filteredLocData, setFilteredLocData] = useState(locData);
     
+
     function removeMarkers() {
       var svgElements = document.querySelectorAll('svg');
 
