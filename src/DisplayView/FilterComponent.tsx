@@ -104,7 +104,7 @@ const FilterComponent = () => {
 
       if (findObj) {
           // Prompt user to enter new description
-          const description = prompt(`Enter new description for ${name}:`);
+          const description = prompt(`Enter new description for ${name}:`, findObj.descr);
           if (description !== null) {
               // Update the description of the accessloc object
               findObj.descr = description;
