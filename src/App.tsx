@@ -6,6 +6,7 @@ import Collapsible from 'react-collapsible'; //npm install react-collapsible
 import DisplaySchools from './DisplayView/DisplaySchools';
 import styled from 'styled-components'; // Import styled-components here
 import { Link } from 'react-scroll';
+import TextToSpeech from './components/TextToSpeech';
 
 // Styled components from the Header component file
 const HeaderComponent = styled.div`
@@ -118,7 +119,19 @@ function App() {
                         Choose your school from our dropdown to view the chat options and map/list views
                       </li>
                       <li>
-                        View a
+                        View a map version of the accessibility markers
+                      </li>
+                      <li>
+                        View a list version of the accessibility markers
+                      </li>
+                      <li>
+                        Add your location as a marker to notify others in the area of changes/improvements to accessibility
+                      </li>
+                      <li>
+                        Filter through our tags and types to view the exact type of marker you want to use
+                      </li>
+                      <li>
+                        Connect with other students/people in the area
                       </li>
                     </ul>
                   </p>
@@ -139,7 +152,21 @@ function App() {
       <section id="connect">
         <ChatView />
       </section>
-      <section id="contact">contact us!</section>
+      <section id="contact">
+        Contact Us!
+        <TextToSpeech text="Introduction: AccessiTech is a web application aimed at providing up-to-date information on accessibility features to locations.
+                    Such as: wheelchair accessible ramps, elevators and gender-inclusive bathrooms.
+                    AccessiTech also aims to connect you with others through your school's student-run organizations and nearby groups focused around accessibility.
+                    Use our map to view locations of elevators or use our text feature to connect with people nearby!
+                    Available features: 
+                    Choose your school from our dropdown to view the chat options and map/list views.
+                    View a map version of the accessibility markers.
+                    View a list version of the accessibility markers.
+                    Add your location as a marker to notify others in the area of changes/improvements to accessibility.
+                    Filter through our tags and types to view the exact type of marker you want to use.
+                    Connect with other students/people in the area.
+                    " />
+      </section>
     </div>
   );
 }
