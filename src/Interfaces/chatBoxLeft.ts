@@ -5,4 +5,5 @@ export interface ChatBoxLeftProps {
     setGroups: (group: Group[]) => void;
     currentGroup: Group;
     setCurrentGroup: (group: Group) => void;
+    setChatView: (chatView: boolean) => void;
 }
