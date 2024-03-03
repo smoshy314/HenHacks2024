@@ -2,81 +2,7 @@ import React, { useState } from 'react';
 //import { AccessLoc } from "../Interfaces/accessloc";
 import accessLocsAll from "../data/AllAccessLocs.json";
 import styled from 'styled-components'; //npm install styled-components
-
-// const FilterComponent = () => {
-//   const [filterTypes, setFilterTypes] = useState<string[]>([]);
-//   const [filterTags, setFilterTags] = useState<string[]>([]);
-
-//   const handleTypeChange = (type: string) => {
-//     const newFilterTypes = filterTypes.includes(type)
-//       ? filterTypes.filter(t => t !== type) // Remove the type if it's already included
-//       : [...filterTypes, type]; // Add the type if it's not included
-//     setFilterTypes(newFilterTypes);
-//   };
-
-//   const handleTagChange = (tag: string) => { // Correct parameter type to string
-//     const newFilterTags = filterTags.includes(tag)
-//       ? filterTags.filter(t => t !== tag) // Remove the tag if it's already included
-//       : [...filterTags, tag]; // Add the tag if it's not included
-//     setFilterTags(newFilterTags);
-//   };
-//   let filteredLocs = accessLocsAll;
-
-//   if (filterTypes.length) {
-//     filteredLocs = filteredLocs.filter(loc => filterTypes.includes(loc.type));
-//   }
-
-//   if (filterTags.length) {
-//     filteredLocs = filteredLocs.filter(loc => loc.tags.some(tag => filterTags.includes(tag)));
-//   }
-
-//   return (
-//     <div>
-//       <h3>Filter by Type</h3>
-//       <div>
-//         <input type="checkbox" id="ramp" onChange={() => handleTypeChange('ramp')} />
-//         <label htmlFor="ramp">Ramp</label>
-//       </div>
-//       <div>
-//         <input type="checkbox" id="elevator" onChange={() => handleTypeChange('elevator')} />
-//         <label htmlFor="elevator">Elevator</label>
-//       </div>
-//       <div>
-//         <input type="checkbox" id="bathroom" onChange={() => handleTypeChange('bathroom')} />
-//         <label htmlFor="bathroom">Bathroom</label>
-//       </div>
-//       <div>
-//         <input type="checkbox" id="bus stop" onChange={() => handleTypeChange('bus stop')} />
-//         <label htmlFor="bus stop">Bus Stop</label>
-//       </div>
-
-//       <h3>Filter by Tag</h3>
-//       <div>
-//         <input type="checkbox" id="wheelchair_acc" onChange={() => handleTagChange('wheelchair_acc')} />
-//         <label htmlFor="wheelchair_acc">Wheelchair Accessible</label>
-//       </div>
-      // <div>
-      //   <input type="checkbox" id="gender_inc" onChange={() => handleTagChange('gender_inc')} />
-      //   <label htmlFor="gender_inc">Gender Inclusive</label>
-      // </div>
-      // <div>
-      //   <input type="checkbox" id="transportation" onChange={() => handleTagChange('transportation')} />
-      //   <label htmlFor="gender_inc">Transportation</label>
-      // </div>
-
-//       <h3>Filtered Results</h3>
-//       {filteredLocs.map(loc => (
-//         <div key={loc.name} className="card" style={{margin: '10px', padding: '10px'}}>
-//           <h5 className="card-title">{loc.name}</h5>
-//           <p className="card-text">{loc.descr}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default FilterComponent;
-
+import { AccessLoc } from '../Interfaces/accessloc';
 
 
 const Container = styled.div`
@@ -101,7 +27,27 @@ const Card = styled.div`
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
-`;
+  transition: box-shadow 0.3s ease;
+  `;
+
+  const EditButton = styled.button`
+    $position: absolute; /* Position the button relative to the card */
+    top: 10px; /* Adjust the top position */
+    right: 10px; /* Adjust the right position */
+    padding: 5px 10px; /* Add padding to the button */
+    background-color: rgba(0, 0, 0, 0.5); /* Set the background color */
+    color: white; /* Set the text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    opacity: 0; /* Initially hide the button */
+    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+  
+    /* Show the button when the card is hovered over */
+    ${Card}:hover & {
+      opacity: 1;
+    }
+  `;
 
 const CardsContainer = styled.div`
   display: flex;
@@ -124,9 +70,13 @@ const Label = styled.label`
   margin-left: 10px;
 `;
 
+
 const FilterComponent = () => {
   const [filterTypes, setFilterTypes] = useState<string[]>([]);
   const [filterTags, setFilterTags] = useState<string[]>([]);
+
+  const [editLocs, setEditLocs] = useState<string[]>([]);
+  const [newDescription, setNewDescription] = useState<string>('');
 
   const handleTypeChange = (type: string) => {
     const newFilterTypes = filterTypes.includes(type)
@@ -146,6 +96,26 @@ const FilterComponent = () => {
     (filterTypes.length === 0 || filterTypes.includes(loc.type)) &&
     (filterTags.length === 0 || loc.tags.some(tag => filterTags.includes(tag)))
   );
+
+  const handleEdit = (name: string) => {
+      // Finding the accessloc object from the name
+      const findObj: AccessLoc | undefined = accessLocsAll.find((al: AccessLoc) => al.name === name);
+
+      if (findObj) {
+          // Prompt user to enter new description
+          const description = prompt(`Enter new description for ${name}:`);
+          if (description !== null) {
+              // Update the description of the accessloc object
+              findObj.descr = description;
+              // Update the state with the edited accessloc object
+              setEditLocs([...editLocs, findObj.name]);
+              // Update the new description state
+              setNewDescription('');
+          }
+      } else {
+          console.log(`Access location with name ${name} not found.`);
+      }
+  };
 
   return (
     <Container>
@@ -196,6 +166,7 @@ const FilterComponent = () => {
           <Card key={loc.name}>
             <h5>{loc.name}</h5>
             <p>{loc.descr}</p>
+            <EditButton onClick = {() => handleEdit(loc.name)}>Edit</EditButton>
           </Card>
         ))}
       </CardsContainer>
