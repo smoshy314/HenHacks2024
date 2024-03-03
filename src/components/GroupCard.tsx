@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { GroupCardProps } from '../Interfaces/groupCard';
 
-
+/**
+ * Renders the group card component.
+ * @param group - The group to be displayed.
+ * @param handleGroupJoin - A function to handle joining a group.
+ * @param handleClickedGroup - A function to handle clicking a group.
+ * @returns The JSX element representing the group card.
+ */
 export function GroupCard({
     group,
     handleGroupJoin,
