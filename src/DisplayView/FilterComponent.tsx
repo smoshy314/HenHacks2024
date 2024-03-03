@@ -76,6 +76,7 @@ const FilterComponent = () => {
   const [filterTags, setFilterTags] = useState<string[]>([]);
 
   const [editLocs, setEditLocs] = useState<string[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [newDescription, setNewDescription] = useState<string>('');
 
   const handleTypeChange = (type: string) => {
