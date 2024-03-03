@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChatView } from './components/ChatView';
 import FilterComponent from './DisplayView/FilterComponent';
-// import { DisplayMap } from './DisplayView/DisplayMap';
 import Collapsible from 'react-collapsible'; //npm install react-collapsible
 import DisplaySchools from './DisplayView/DisplaySchools';
 import styled from 'styled-components'; // Import styled-components here
@@ -77,8 +76,7 @@ function App() {
   function handleMap() {
     setMap(!isMap);
   }
-  const [backendSuccess, setBackendSuccess] = useState(false);
-  setBackendSuccess(false)
+  const [backendSuccess] = useState(false);
   return (
     <div className="App">
       <HeaderComponent>
