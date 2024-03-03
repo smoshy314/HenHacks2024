@@ -9,6 +9,8 @@ import { Link } from 'react-scroll';
 import TextToSpeech from './components/TextToSpeech';
 import { DisplayMap } from './DisplayView/DisplayMap';
 import { Button } from 'react-bootstrap';
+import { Routing } from './components/routing';
+import { AddLocationModal } from './components/addLocationModal';
 
 // Styled components from the Header component file
 const HeaderComponent = styled.div`
@@ -158,6 +160,8 @@ function App() {
         <ChatView />
       </section>
       <section id="contact">
+        <Routing></Routing>
+        <AddLocationModal backendSuccess={false}></AddLocationModal>
         <hr></hr>
         Contact Us!
         <div>
