@@ -3,7 +3,6 @@ import * as maptilersdk from '@maptiler/sdk';
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import './map.css';
 import locData from '../data/AllAccessLocs.json';
-import Form from 'react-bootstrap/Form';
 
 
 export default function Map() {
@@ -12,6 +11,9 @@ export default function Map() {
     const UDMapCenter = { lng: -75.751, lat: 39.678 }; 
     const [zoom, setZoom] = useState(16);
     maptilersdk.config.apiKey = 'PlaceHolderKey';
+
+    //Temp SetZoomCall
+    setZoom(16);
 
     useEffect(() => {
         if (locMap.current) return; // stops map from intializing more than once
