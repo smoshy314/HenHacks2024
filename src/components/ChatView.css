@@ -58,6 +58,9 @@
   justify-content: center;
   border: 1px solid black;
   padding: 5px;
+  border-radius: 25px;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .GroupJoinCard {
@@ -78,6 +81,7 @@
   border: 1px solid black;
   padding: 5px;
   min-width: 50%;
+  border-radius: 25px;
 }
 
 .ChatViewRight {
@@ -86,6 +90,8 @@
   flex-direction: column;
   border: 1px solid black;
   padding: 5px;
+  border-radius: 25px;
+  background-color: #c5c5c5;
 }
 
 .chatbubbleYOU {
@@ -95,16 +101,17 @@
   background: #EFCB68;
   padding: 10px;
   margin-left: 40%;
+  font-weight: bold;
 }
 
 .chatbubbleOTHER {
   border: 1px solid #2e2c40;
   justify-content: center;
   border-radius: 25px;
-  background: #4B4867;
+  background: #8b86bd;
   padding: 10px;
   max-width: 60%;
-  color: white;
+  font-weight: bold;
 }
 
 .otherUser {
@@ -125,6 +132,5 @@
 
 .messageType {
   margin-left: 70%;
-  display: flex;
   flex-direction: row;
 }
