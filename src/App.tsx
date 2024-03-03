@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 import { ChatView } from './components/ChatView';
 import FilterComponent from './DisplayView/FilterComponent';
+import { DisplayMap } from './DisplayView/DisplayMap';
 import Collapsible from 'react-collapsible'; //npm install react-collapsible
 import DisplaySchools from './DisplayView/DisplaySchools';
 
@@ -35,6 +36,7 @@ function App() {
       <DisplaySchools />
       <br></br>
       <FilterComponent />
+      <DisplayMap />
       <hr></hr>
       <ChatView></ChatView>
     </div>
