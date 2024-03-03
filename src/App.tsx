@@ -73,7 +73,7 @@ const HeaderComponent = styled.div`
   height: 70px;
   min-height: 70px;
   width: 100%;
-  background-color: #fff;
+  background-color: #f0f0f0;
   padding: 0 1rem;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.11);
   gap: 20px;
@@ -103,6 +103,7 @@ const NavLink = styled(Link)`
 `;
 
 const AppTitle = styled.h1`
+  margin-top: -5px;
   text-align: center;
   font-size: 36px;
   margin-bottom: 10px;
@@ -117,7 +118,7 @@ const AppHelp = styled.div`
 `;
 
 const SchoolComponent = styled.div`
-  
+  text-align: center;
 `;
 
 function App() {
@@ -180,7 +181,9 @@ function App() {
             </AppTitle>
         </section>
       {/* Rest of your content */}
-      <DisplaySchools />
+      <SchoolComponent>
+        <DisplaySchools />
+      </SchoolComponent>
       <br />
       <section id="navigation"> 
       {/* map component goes here*/}
