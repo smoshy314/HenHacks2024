@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:4000",
   "name": "henhacks2024",
   "version": "0.1.0",
   "private": true,
@@ -54,5 +55,9 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.10"
+  },
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:4000/"
   }
 }
