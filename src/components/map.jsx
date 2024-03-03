@@ -10,7 +10,7 @@ export default function Map({ locData, setLocData,filterCriteria }) {
     const locMap = useRef(null);
     const UDMapCenter = { lng: -75.751, lat: 39.678 }; 
     const [zoom] = useState(16);
-    maptilersdk.config.apiKey = 'TestAPIKey';
+    maptilersdk.config.apiKey = 'TextApiKey';
     const [filteredLocData, setFilteredLocData] = useState(locData);
     
 

@@ -24,7 +24,7 @@ export function DisplayMap(): JSX.Element {
                  setLocData={setFilteredLocData}
                  filterCriteria={filterCriteria}
             ></Map>
-                <Form>
+                <Form style={{ marginLeft: "20px"}}>
                     <Form.Group controlId="filterCriteria">
                         <Form.Label>Filter Criteria</Form.Label>
                         <div>
