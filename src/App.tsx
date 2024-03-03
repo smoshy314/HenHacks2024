@@ -1,5 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
+
 import './App.css';
 import { ChatView } from './components/ChatView';
 import FilterComponent from './DisplayView/FilterComponent';
@@ -14,5 +15,5 @@ function App() {
     </div>
   );
 }
-
+  
 export default App;
