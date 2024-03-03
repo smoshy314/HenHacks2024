@@ -2,29 +2,67 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Map from '../components/map';
 import locData from '../data/AllAccessLocs.json';
+import Form from 'react-bootstrap/Form';
 
 export function DisplayMap(): JSX.Element {
-    const [isNeedUpdate, setIsNeedUpdate] = useState(true);
-    const [locDataState, setLocDataState] = useState(locData);
+    const [filterCriteria, setFilterCriteria] = useState(["bus stop","elevator","ramp","bathroom"]);
+    const [filteredLocData, setFilteredLocData] = useState(locData);
 
-    function testAddressAdd(){
-        const test = locData.concat({
-          "tags": ["transportation", "wheelchair_acc"],
-          "name": "Perkins bus stop",
-          "coords": [39.679049004049126, -75.75219277353854],
-          "location": "Perkins Student Center",
-          "type": "bus stop",
-          "descr": "A bus stop for all students at the Perkins Student Center"   
-        });
-        setLocDataState(test);
-        setIsNeedUpdate(true);
-     }
+    const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value, checked } = event.target;
+        
+        if (checked) {
+            setFilterCriteria((prevFilterCriteria) => [...prevFilterCriteria, value]);
+        } else {
+            setFilterCriteria((prevFilterCriteria) => prevFilterCriteria.filter((criteria) => criteria !== value));
+        }
+    };
+
     return (
         <div className="DisplayMap">
-            <Map locData={locDataState}
-                 isNeedUpdate={isNeedUpdate}
-                 setIsNeedUpdate={setIsNeedUpdate}></Map>
-            <Button onClick={testAddressAdd}>Add Marker</Button>
-        </div>
-    );
-}
+            <Map locData={filteredLocData}
+                 setLocData={setFilteredLocData}
+                 filterCriteria={filterCriteria}
+            ></Map>
+                <Form>
+                    <Form.Group controlId="filterCriteria">
+                        <Form.Label>Filter Criteria</Form.Label>
+                        <div>
+                            <Form.Check
+                                type="checkbox"
+                                id="busStopCheckbox"
+                                label="Bus Stop"
+                                value="bus stop"
+                                checked={filterCriteria.includes("bus stop")}
+                                onChange={handleFilterChange}
+                            />
+                            <Form.Check
+                                type="checkbox"
+                                id="elevatorCheckbox"
+                                label="Elevator"
+                                value="elevator"
+                                checked={filterCriteria.includes("elevator")}
+                                onChange={handleFilterChange}
+                            />
+                            <Form.Check
+                                type="checkbox"
+                                id="rampCheckbox"
+                                label="Ramp"
+                                value="ramp"
+                                checked={filterCriteria.includes("ramp")}
+                                onChange={handleFilterChange}
+                            />
+                            <Form.Check
+                                type="checkbox"
+                                id="bathroomCheckbox"
+                                label="Bathroom"
+                                value="bathroom"
+                                checked={filterCriteria.includes("bathroom")}
+                                onChange={handleFilterChange}
+                            />
+                        </div>
+                    </Form.Group>
+                </Form>
+            </div>
+                );
+            }
