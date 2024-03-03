@@ -1,4 +1,3 @@
-import { AccessExpression } from "typescript";
 import { AccessLoc, LocType } from "./Interfaces/accessloc";
 import accessLocsAll from "./data/AllAccessLocs.json";
 
