@@ -1,4 +1,6 @@
-"I got sample data from websites online about colleges all over the world and parsed the data to match the contents of our AllSchools.json file and our school interface using Smalltalk"
+"I got sample data from websites online about colleges all over the world and 
+parsed the data to match the contents of our AllSchools.json file 
+and our school interface using Smalltalk"
 
 "variable declaration"
 | collectionOfSchools outputStream |

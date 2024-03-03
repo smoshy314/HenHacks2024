@@ -1,14 +1,9 @@
 [
-{ "name": "University of Delaware", "country": "US"
-},
-{
-"name": "Wilmington University", "country": "US"
-},{
+{"name": "University of Delaware", "country": "US"},
+{"name": "Wilmington University", "country": "US"},{
 "name": "University of Oxford", "country": "UK"},
-{
-"name": "University of Turku", "country": "Finland"},
-{
- "name": "Wuhan University", "country": "China"},
+{"name": "University of Turku", "country": "Finland"},
+{"name": "Wuhan University", "country": "China"},
 {"name": "Harvard University", "country": " USA"},
 {"name": "University of Cambridge", "country": " UK"},
 {"name": "Stanford University", "country": " USA"},
