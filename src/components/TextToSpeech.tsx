@@ -5,6 +5,11 @@ export interface TextProps {
     text: string
 }
 
+/**
+ * Renders the text to speech component.
+ * @param text - The text to be spoken.
+ * @returns The JSX element representing the text to speech component.
+ */
 export function TextToSpeech({text}:TextProps): JSX.Element {
     const [stopped, setStopped] = useState<boolean>(false);
     const [utterance, setUtterance] = useState<SpeechSynthesisUtterance>({} as SpeechSynthesisUtterance);

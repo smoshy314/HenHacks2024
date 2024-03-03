@@ -143,7 +143,7 @@ function App() {
       </SchoolComponent>
       <br />
       <section id="navigation"> 
-        <FilterComponent />
+        <FilterComponent backendSuccess={backendSuccess}/>
       </section>
       <hr />
       <section id="connect">

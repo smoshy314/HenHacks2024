@@ -28,6 +28,10 @@ export const blankGroup: Group = {
   chatlog: [blankChat]
 };
 
+/**
+ * Renders the chat view component.
+ * @returns The JSX element representing the chat view.
+ */
 export function ChatView(): JSX.Element{
   const [testGroups, setTestGroups] = useState<Group[]>(groupData);
   const [currentGroup, setCurrentGroup] = useState<Group>(blankGroup);
