@@ -75,6 +75,7 @@ function App() {
   function handleMap() {
     setMap(!isMap);
   }
+  const [backendSuccess, setBackendSuccess] = useState(false);
   return (
     <div className="App">
       <HeaderComponent>
@@ -104,11 +105,8 @@ function App() {
             </NavList>
           </nav>
         </header>
-        {/* Add children components */}
-        {/* End children components */}
       </HeaderComponent>
       <section id="about">
-          {/* <div className="App-title">AccessiTech</div> */}
           <AppTitle>AccessiTech
             <AppHelp>
               <br></br>
@@ -146,15 +144,14 @@ function App() {
               </AppHelp>
             </AppTitle>
         </section>
-      {/* Rest of your content */}
       <SchoolComponent>
         <DisplaySchools />
       </SchoolComponent>
       <br />
       <section id="navigation"> 
         <Button style={{marginLeft: "20px"}} onClick={handleMap}>Change View</Button>
-        {isMap && <DisplayMap />}
-        {!isMap && <FilterComponent />}
+        {isMap && <DisplayMap backendSuccess={backendSuccess} />}
+        {!isMap && <FilterComponent backendSuccess={backendSuccess}/>}
       </section>
       <hr />
       <section id="connect">
