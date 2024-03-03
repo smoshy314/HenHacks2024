@@ -4,9 +4,7 @@
         "name": "gore-front-ramp",
         "coords": [39.680645, -75.752601], 
         "location": "gore-hall",
-        "type": "elevator",
+        "type": "ramp",
         "descr": "The Gore Hall wheelchair accessible ramp is located at the front entrance of Gore Hall by the Green" 
-    },{
-
     }
 ]
