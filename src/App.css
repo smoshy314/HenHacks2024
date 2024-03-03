@@ -29,10 +29,7 @@
 }
 
 .App-help {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background-color: #4b4a67 !important;
+  background-color: #f0f0f0;
 }
 
 .App-link {
