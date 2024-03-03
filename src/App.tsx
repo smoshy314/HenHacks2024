@@ -15,7 +15,10 @@ function App() {
         <br></br>
         <Collapsible className="App-help" trigger="❓">
           <p>
-            Here's how to use our site!
+            AccessiTek is a web application aimed at providing up-to-date information on accessibility features to locations. 
+            Such as: wheelchair accessible ramps, elevators and gender-inclusive bathrooms. 
+            AccessiTek also aims to connect you with others through your school's student-run organizations and nearby groups focused around accessibility.
+            Use our map to view locations of elevators or use our text feature to 
           </p>
         </Collapsible>
         <br></br>

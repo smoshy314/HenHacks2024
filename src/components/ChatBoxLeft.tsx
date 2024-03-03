@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Group } from "./ChatView";
 import { GroupCard } from "./GroupCard";
 import { ChatBoxLeftProps } from "../Interfaces/chatBoxLeft";
