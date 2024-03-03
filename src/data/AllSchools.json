@@ -1,22 +1,22 @@
 [
     {
         "name": "University of Delaware",
-        "Country": "US"
+        "country": "US"
     },
     {
         "name": "Wilmington University",
-        "Country": "US"
+        "country": "US"
     },    
     {
         "name": "University of Oxford",
-        "Country": "UK"
+        "country": "UK"
     },    
     {
         "name": "University of Turku",
-         "Country": "Finland"
+         "country": "Finland"
     },
     {
         "name": "Wuhan University",
-        "Country": "China"
+        "country": "China"
     }
 ]
