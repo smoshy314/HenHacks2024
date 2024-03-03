@@ -7,6 +7,8 @@ import DisplaySchools from './DisplayView/DisplaySchools';
 import styled from 'styled-components'; // Import styled-components here
 import { Link } from 'react-scroll';
 import TextToSpeech from './components/TextToSpeech';
+import { DisplayMap } from './DisplayView/DisplayMap';
+import { Button } from 'react-bootstrap';
 
 // Styled components from the Header component file
 const HeaderComponent = styled.div`
@@ -69,6 +71,10 @@ const SchoolComponent = styled.div`
 `;
 
 function App() {
+  const [isMap, setMap] = useState<boolean>(false);
+  function handleMap() {
+    setMap(!isMap);
+  }
   const [backendSuccess, setBackendSuccess] = useState(false);
   return (
     <div className="App">
@@ -143,7 +149,9 @@ function App() {
       </SchoolComponent>
       <br />
       <section id="navigation"> 
-        <FilterComponent backendSuccess={backendSuccess}/>
+        <Button style={{marginLeft: "20px"}} onClick={handleMap}>Change View</Button>
+        {isMap && <DisplayMap backendSuccess={backendSuccess} />}
+        {!isMap && <FilterComponent backendSuccess={backendSuccess}/>}
       </section>
       <hr />
       <section id="connect">
