@@ -78,7 +78,6 @@ import styled from 'styled-components'; //npm install styled-components
 // export default FilterComponent;
 
 
-
 const Container = styled.div`
   margin: 10px;
 `;
