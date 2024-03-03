@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Group } from "./ChatView";
 import { Chat } from "./ChatView";
-import groupText from "../data/groupData.json";
 import { Form, Button } from "react-bootstrap";
 import { MessagesOutput } from "./ChatBoxMessage";
 
