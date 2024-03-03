@@ -55,27 +55,11 @@
         "descr": "An elevator for all students to use in Ewing Hall"   
     },
     {
-        "tags": [""],
-        "name": "",
-        "coords": [], 
-        "location": "",
-        "type": "",
-        "descr":  ""  
-    },
-    {
-        "tags": [""],
-        "name": "",
-        "coords": [], 
-        "location": "",
-        "type": "",
-        "descr": ""    
-    },
-    {
-        "tags": [""],
-        "name": "",
-        "coords": [], 
-        "location": "",
-        "type": "",
-        "descr": "" 
+        "tags": ["elevator", "wheelchair_acc"],
+        "name": "smith hall elevator",
+        "coords": [39.680371, -75.754612], 
+        "location": "Smith Hall",
+        "type": "elevator",
+        "descr":  "An elevator for all students to use in Smith Hall"  
     }
 ]
