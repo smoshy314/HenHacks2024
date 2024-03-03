@@ -105,6 +105,7 @@ function App() {
           {/* <div className="App-title">AccessiTech</div> */}
           <AppTitle>AccessiTech
             <AppHelp>
+              <br></br>
                 <Collapsible trigger=" Need Help❓" style={{ fontSize: '16px' }}>
                   <p>
                     AccessiTech is a web application aimed at providing up-to-date information on accessibility features to locations.
@@ -114,7 +115,7 @@ function App() {
                   </p>
                   <p>
                     Available features:
-                    <ul>
+                    <ul style={{padding: "0px"}}>
                       <li>
                         Choose your school from our dropdown to view the chat options and map/list views
                       </li>
@@ -153,7 +154,25 @@ function App() {
         <ChatView />
       </section>
       <section id="contact">
+        <hr></hr>
         Contact Us!
+        <div>
+          <ul>
+            <li>
+              Malika I - fakemail@gmail.com
+            </li>
+            <li>
+              Josh M - fakemail@gmail.com
+            </li>
+            <li>
+              Bryant F - fakemail@gmail.com
+            </li>
+            <li>
+              Ava W - fakemail@gmail.com
+            </li>
+          </ul>
+        </div>
+        <div>Text To Speech</div>
         <TextToSpeech text="Introduction: AccessiTech is a web application aimed at providing up-to-date information on accessibility features to locations.
                     Such as: wheelchair accessible ramps, elevators and gender-inclusive bathrooms.
                     AccessiTech also aims to connect you with others through your school's student-run organizations and nearby groups focused around accessibility.
