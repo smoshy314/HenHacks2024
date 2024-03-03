@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import './ChatView.css';
 import { ChatBoxLeft } from './ChatBoxLeft';
+import { ChatBoxRight } from './ChatBoxRight';
+import groupData from '../data/groupData.json';
 
 export interface Chat {
   username: string;
@@ -16,8 +18,8 @@ export interface Group {
 }
 
 export function ChatView(): JSX.Element{
-  const [testGroups, setTestGroups] = useState<Group[]>([{name: "Test Group", img: "/Images/dog.jpg", joined: false, chatlog: []}]);
-  const [currentGroup, setCurrentGroup] = useState<Group | undefined>();
+  const [testGroups, setTestGroups] = useState<Group[]>(groupData as Group[]);
+  const [currentGroup, setCurrentGroup] = useState<Group>({name: "", img: "", joined: false, chatlog: []});
   return (
     <div className="ChatView">
       <ChatBoxLeft
@@ -26,6 +28,7 @@ export function ChatView(): JSX.Element{
         currentGroup={currentGroup}
         setCurrentGroup={setCurrentGroup}
       />
+      <ChatBoxRight group={currentGroup} groups={testGroups} setGroups={setTestGroups}/> 
     </div>
   );
 }

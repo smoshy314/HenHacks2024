@@ -10,7 +10,8 @@ export function ChatBoxLeft({
   currentGroup,
   setCurrentGroup,
 }: ChatBoxLeftProps): JSX.Element{
-    function handleGroupJoin(groupName:string){
+    
+  function handleGroupJoin(groupName:string){
       const newGroups: Group[] = groups.map((group)=>
         group.name === groupName ? {...group, joined: true} : group
       );
