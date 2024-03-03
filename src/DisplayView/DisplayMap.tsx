@@ -4,9 +4,13 @@ import Map from '../components/map';
 import locData from '../data/AllAccessLocs.json';
 import Form from 'react-bootstrap/Form';
 
-export function DisplayMap(): JSX.Element {
+interface DisplayMapProps {
+    backendSuccess: boolean;
+}
+
+export function DisplayMap({backendSuccess}:DisplayMapProps): JSX.Element {
     const [filterCriteria, setFilterCriteria] = useState(["bus stop","elevator","ramp","bathroom"]);
-    const [filteredLocData, setFilteredLocData] = useState(locData);
+    const [filteredLocData, setFilteredLocData] = useState(!backendSuccess ? locData : []);
 
     const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;

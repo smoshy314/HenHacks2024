@@ -84,8 +84,10 @@ const Label = styled.label`
   margin-left: 10px;
 `;
 
-
-const FilterComponent = () => {
+interface FilterComponentProps {
+  backendSuccess: boolean;
+}
+const FilterComponent = ({backendSuccess}:FilterComponentProps) => {
   const [filterTypes, setFilterTypes] = useState<string[]>([]);
   const [filterTags, setFilterTags] = useState<string[]>([]);
 
