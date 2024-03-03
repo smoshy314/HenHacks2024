@@ -1,22 +1,27 @@
 [
-    {
-        "name": "University of Delaware",
-        "country": "US"
-    },
-    {
-        "name": "Wilmington University",
-        "country": "US"
-    },    
-    {
-        "name": "University of Oxford",
-        "country": "UK"
-    },    
-    {
-        "name": "University of Turku",
-         "country": "Finland"
-    },
-    {
-        "name": "Wuhan University",
-        "country": "China"
-    }
+{"name": "University of Delaware", "country": "US"},
+{"name": "Wilmington University", "country": "US"},{
+"name": "University of Oxford", "country": "UK"},
+{"name": "University of Turku", "country": "Finland"},
+{"name": "Wuhan University", "country": "China"},
+{"name": "Harvard University", "country": " USA"},
+{"name": "University of Cambridge", "country": " UK"},
+{"name": "Stanford University", "country": " USA"},
+{"name": "Massachusetts Institute of Technology (MIT)", "country": " USA"},
+{"name": "California Institute of Technology (Caltech)", "country": " USA"},
+{"name": "ETH Zurich - Swiss Federal Institute of Technology", "country": " Switzerland"},
+{"name": "University College London (UCL)", "country": " UK"},
+{"name": "University of Chicago", "country": " USA"},
+{"name": "Imperial College London", "country": " UK"},
+{"name": "Princeton University", "country": " USA"},
+{"name": "Yale University", "country": " USA"},
+{"name": "University of California", "country": " Berkeley"},
+{"name": "University of Toronto", "country": " Canada"},
+{"name": "National University of Singapore (NUS)", "country": " Singapore"},
+{"name": "University of Tokyo", "country": " Japan"},
+{"name": "Tsinghua University", "country": " China"},
+{"name": "Peking University", "country": " China"},
+{"name": "University of Melbourne", "country": " Australia"},
+{"name": "Australian National University (ANU)", "country": " Australia"}
+
 ]
