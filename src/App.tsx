@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { ChatView } from './components/ChatView';
 
@@ -13,5 +13,5 @@ function App() {
     </div>
   );
 }
-
+  
 export default App;
