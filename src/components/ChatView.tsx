@@ -16,9 +16,22 @@ export interface Group {
   chatlog: Chat[]
 }
 
+export const blankChat: Chat = {
+  username: "",
+  message: ""
+}
+
+export const blankGroup: Group = {
+  name: "",
+  img: "",
+  joined: false,
+  chatlog: [blankChat]
+};
+
 export function ChatView(): JSX.Element{
-  const [testGroups, setTestGroups] = useState<Group[]>(groupData as Group[]);
-  const [currentGroup, setCurrentGroup] = useState<Group>({name: "", img: "", joined: false, chatlog: []});
+  const [testGroups, setTestGroups] = useState<Group[]>(groupData);
+  const [currentGroup, setCurrentGroup] = useState<Group>(blankGroup);
+  const [chatView, setChatView] = useState<boolean>(false);
   return (
     <div className="ChatView">
       <ChatBoxLeft
@@ -26,8 +39,9 @@ export function ChatView(): JSX.Element{
         setGroups={setTestGroups}
         currentGroup={currentGroup}
         setCurrentGroup={setCurrentGroup}
+        setChatView={setChatView}
       />
-      <ChatBoxRight group={currentGroup} groups={testGroups} setGroups={setTestGroups}/> 
+      {chatView && <ChatBoxRight group={currentGroup} groups={testGroups} setCurrentGroup={setCurrentGroup} setGroups={setTestGroups}/>}
     </div>
   );
 }

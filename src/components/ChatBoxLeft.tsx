@@ -8,6 +8,7 @@ export function ChatBoxLeft({
   setGroups,
   currentGroup,
   setCurrentGroup,
+  setChatView
 }: ChatBoxLeftProps): JSX.Element{
     
   function handleGroupJoin(groupName:string){
@@ -15,13 +16,15 @@ export function ChatBoxLeft({
         group.name === groupName ? {...group, joined: true} : group
       );
       setGroups(newGroups);
+      handleClickedGroup(groupName);
     }
     function handleClickedGroup(groupName:string){
       const groupIndex = groups.findIndex((group)=>group.name === groupName);
       setCurrentGroup(groups[groupIndex]);
+      setChatView(true);
     }
     return (
-      <div className="ChatView">
+      <div className="ChatViewLeft">
         {groups.map((group)=>
         <GroupCard 
           group={group} 
