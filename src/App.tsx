@@ -5,6 +5,7 @@ import './App.css';
 import { ChatView } from './components/ChatView';
 import FilterComponent from './DisplayView/FilterComponent';
 import Collapsible from 'react-collapsible'; //npm install react-collapsible
+import DisplaySchools from './DisplayView/DisplaySchools';
 
 function App() {
   return (
@@ -31,8 +32,10 @@ function App() {
           </p>
       </Collapsible>
       </header>
+      <DisplaySchools />
       <br></br>
       <FilterComponent />
+      <hr></hr>
       <ChatView></ChatView>
     </div>
   );

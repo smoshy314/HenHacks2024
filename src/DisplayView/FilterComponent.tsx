@@ -4,17 +4,30 @@ import accessLocsAll from "../data/AllAccessLocs.json";
 import styled from 'styled-components'; //npm install styled-components
 import { AccessLoc } from '../Interfaces/accessloc';
 
-
 const Container = styled.div`
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between; /* Distribute items along the main axis */
   margin: 10px;
 `;
 
 const FilterTitle = styled.div`
-  margin: 10px
+  flex: 0 0 auto; /* Prevent the container from growing or shrinking */
+  max-height: 300px; /* Maximum height for the filter container */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+  width: 150px; /* Fixed width for the filter container */
+  background-color: #b36a5e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
 `;
 
 const FilterOptionsContainer = styled.div`
   display: flex;
+  flex-direction: column; /* Arrange options vertically */
+  gap: 10px;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
@@ -23,39 +36,40 @@ const FilterOptionsContainer = styled.div`
 const Card = styled.div`
   background-color: papayawhip;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  width: 20 px
+  max-width: 100px;
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
   transition: box-shadow 0.3s ease;
   `;
 
-  const EditButton = styled.button`
-    $position: absolute; /* Position the button relative to the card */
-    top: 10px; /* Adjust the top position */
-    right: 10px; /* Adjust the right position */
-    padding: 5px 10px; /* Add padding to the button */
-    background-color: rgba(0, 0, 0, 0.5); /* Set the background color */
-    color: white; /* Set the text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    opacity: 0; /* Initially hide the button */
-    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
-  
-    /* Show the button when the card is hovered over */
-    ${Card}:hover & {
-      opacity: 1;
-    }
-  `;
+const EditButton = styled.button`
+  $position: absolute; /* Position the button relative to the card */
+  top: 10px; /* Adjust the top position */
+  right: 10px; /* Adjust the right position */
+  padding: 5px 10px; /* Add padding to the button */
+  background-color: rgba(0, 0, 0, 0.5); /* Set the background color */
+  color: white; /* Set the text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  opacity: 0; /* Initially hide the button */
+  transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+
+  /* Show the button when the card is hovered over */
+  ${Card}:hover & {
+    opacity: 1;
+  }
+`;
 
 const CardsContainer = styled.div`
   display: flex;
-  width: 200 px
-  height: 100 px
-  flex-wrap: wrap;
-  gap: 20px; 
-  justify-content: center; 
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center cards horizontally */
+  align-items: flex-start; /* Align cards to the top of the container */
+  gap: 20px; /* Add space between cards */
+  margin-left: 20px; /* Add space between filter and cards */
+  width: calc(100% - 200px);
 `;
 
 const CheckboxContainer = styled.div`
@@ -76,6 +90,7 @@ const FilterComponent = () => {
   const [filterTags, setFilterTags] = useState<string[]>([]);
 
   const [editLocs, setEditLocs] = useState<string[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [newDescription, setNewDescription] = useState<string>('');
 
   const handleTypeChange = (type: string) => {
@@ -103,7 +118,7 @@ const FilterComponent = () => {
 
       if (findObj) {
           // Prompt user to enter new description
-          const description = prompt(`Enter new description for ${name}:`);
+          const description = prompt(`Enter new description for ${name}:`, findObj.descr);
           if (description !== null) {
               // Update the description of the accessloc object
               findObj.descr = description;
@@ -160,7 +175,6 @@ const FilterComponent = () => {
         </FilterOptionsContainer>
       </FilterTitle>
 
-      <Title>Filtered Results</Title>
       <CardsContainer>
         {filteredLocs.map(loc => (
           <Card key={loc.name}>
