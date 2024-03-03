@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AccessLoc } from "../Interfaces/accessloc";
 import accessLocsAll from "../data/AllAccessLocs.json";
-import styled from 'styled-components';
+import styled from 'styled-components'; //npm install styled-components
 
 // const FilterComponent = () => {
 //   const [filterTypes, setFilterTypes] = useState<string[]>([]);
@@ -55,14 +55,14 @@ import styled from 'styled-components';
 //         <input type="checkbox" id="wheelchair_acc" onChange={() => handleTagChange('wheelchair_acc')} />
 //         <label htmlFor="wheelchair_acc">Wheelchair Accessible</label>
 //       </div>
-//       <div>
-//         <input type="checkbox" id="gender_inc" onChange={() => handleTagChange('gender_inc')} />
-//         <label htmlFor="gender_inc">Gender Inclusive</label>
-//       </div>
-//       <div>
-//         <input type="checkbox" id="transportation" onChange={() => handleTagChange('transportation')} />
-//         <label htmlFor="gender_inc">Transportation</label>
-//       </div>
+      // <div>
+      //   <input type="checkbox" id="gender_inc" onChange={() => handleTagChange('gender_inc')} />
+      //   <label htmlFor="gender_inc">Gender Inclusive</label>
+      // </div>
+      // <div>
+      //   <input type="checkbox" id="transportation" onChange={() => handleTagChange('transportation')} />
+      //   <label htmlFor="gender_inc">Transportation</label>
+      // </div>
 
 //       <h3>Filtered Results</h3>
 //       {filteredLocs.map(loc => (
@@ -83,19 +83,33 @@ const Container = styled.div`
   margin: 10px;
 `;
 
-const CardsContainer = styled.div`
+const FilterTitle = styled.div`
+  margin: 10px
+`;
+
+const FilterOptionsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; 
-  justify-content: center; 
+  gap: 10px;
+  justify-content: center;
 `;
 
 const Card = styled.div`
   background-color: papayawhip;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 20 px
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
+`;
+
+const CardsContainer = styled.div`
+  display: flex;
+  width: 200 px
+  height: 100 px
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center; 
 `;
 
 const CheckboxContainer = styled.div`
@@ -135,21 +149,46 @@ const FilterComponent = () => {
 
   return (
     <Container>
-      <Title>Filter by Type</Title>
-      {/* Filter by Type */}
-      <CheckboxContainer>
-        <input type="checkbox" id="ramp" onChange={() => handleTypeChange('ramp')} />
-        <Label htmlFor="ramp">Ramp</Label>
-      </CheckboxContainer>
-      {/* Repeat for other types */}
+      <FilterTitle>
+        <Title>Filter by Type</Title>
+        <FilterOptionsContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="ramp" onChange={() => handleTypeChange('ramp')} />
+            <Label htmlFor="ramp">Ramp</Label>
+          </CheckboxContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="elevator" onChange={() => handleTypeChange('elevator')} />
+            <Label htmlFor="elevator">Elevator</Label>
+          </CheckboxContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="bathroom" onChange={() => handleTypeChange('bathroom')} />
+            <Label htmlFor="bathroom">Bathroom</Label>
+          </CheckboxContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="bus stop" onChange={() => handleTypeChange('bus stop')} />
+            <Label htmlFor="bus stop">Bus Stop</Label>
+          </CheckboxContainer>
+          </FilterOptionsContainer>
+      </FilterTitle>
 
-      <Title>Filter by Tag</Title>
-      {/* Filter by Tag */}
-      <CheckboxContainer>
-        <input type="checkbox" id="wheelchair_acc" onChange={() => handleTagChange('wheelchair_acc')} />
-        <Label htmlFor="wheelchair_acc">Wheelchair Accessible</Label>
-      </CheckboxContainer>
-      {/* Repeat for other tags */}
+      <FilterTitle>
+        <Title>Filter by Tag</Title>
+        {/* Filter by Tag */}
+        <FilterOptionsContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="wheelchair_acc" onChange={() => handleTagChange('wheelchair_acc')} />
+            <Label htmlFor="wheelchair_acc">Wheelchair Accessible</Label>
+          </CheckboxContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="gender_inclusive" onChange={() => handleTagChange('gender_inclusive')} />
+            <Label htmlFor="gender_inclusive">Gender Inclusive</Label>
+            </CheckboxContainer>
+          <CheckboxContainer>
+            <input type="checkbox" id="transportation" onChange={() => handleTagChange('transportation')} />
+            <Label htmlFor="gender_inc">Transportation</Label>
+            </CheckboxContainer>
+        </FilterOptionsContainer>
+      </FilterTitle>
 
       <Title>Filtered Results</Title>
       <CardsContainer>
