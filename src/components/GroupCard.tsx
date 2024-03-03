@@ -12,7 +12,7 @@ export function GroupCard({
     return (
         <div className="GroupCard">
             <div className='group-card'>
-                <h1 onClick={() => handleClickedGroup(group.name)}>{group.name}</h1>
+                <h1>{group.name}</h1>
                 <img src={group.img} alt="Group Icon"/>
                 <Button onClick={() => handleGroupJoin(group.name)}>Join Group</Button>
             </div>

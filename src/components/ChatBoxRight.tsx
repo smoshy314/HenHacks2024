@@ -6,7 +6,7 @@ import { Form, Button } from "react-bootstrap";
 import { MessagesOutput } from "./ChatBoxMessage";
 
 export interface ChatBoxRightProps {
-  group?: Group,
+  group: Group,
   groups: Group[],
   setGroups: (group: Group[]) => void;};
 
