@@ -6,5 +6,76 @@
         "location": "gore-hall",
         "type": "ramp",
         "descr": "The Gore Hall wheelchair accessible ramp is located at the front entrance of Gore Hall by the Green" 
+    },{
+        "tags": ["gender_inclusive"],
+        "name": "morris-all-gender-bathroom",
+        "coords": [39.678261509907486, -75.75285191809829], 
+        "location": "morris library",
+        "type": "bathroom",
+        "descr": "A bathroom for all genders located in Morris Library"
+    },
+    {
+        "tags": ["wheelchair_acc"],
+        "name": "morris-side-ramp",
+        "coords": [39.678073, -75.752430], 
+        "location": "morris library",
+        "type": "ramp",
+        "descr": "The morris library wheelchair accessible ramp is located at the side entrance of morris library"    
+    },
+    {
+        "tags": ["gender_inclusive"],
+        "name": "trabant-all-gender-bathroom",
+        "coords": [39.682472, -75.754617], 
+        "location": "trabant center",
+        "type": "bathroom",
+        "descr": "A bathroom for all genders located in the Trabant Center"   
+    },
+    {
+        "tags": ["transportation", "wheelchair_acc"],
+        "name": "perkins bus stop",
+        "coords": [39.677009, -75.750141], 
+        "location": "Perkins Student Center",
+        "type": "bus stop",
+        "descr": "A bus stop for all students at the Perkins Student Center"   
+    },
+    {
+        "tags": ["transportation", "wheelchair_acc"],
+        "name": "star tower bus stop",
+        "coords": [39.663860, -75.754006], 
+        "location": "Star Tower",
+        "type": "bus stop",
+        "descr": "A bus stop for all students at the Star Tower"   
+    },
+    {
+        "tags": ["elevator", "wheelchair_acc"],
+        "name": "ewing elevator",
+        "coords": [39.681511, -75.755229], 
+        "location": "Ewing Hall",
+        "type": "elevator",
+        "descr": "An elevator for all students to use in Ewing Hall"   
+    },
+    {
+        "tags": [""],
+        "name": "",
+        "coords": [], 
+        "location": "",
+        "type": "",
+        "descr":  ""  
+    },
+    {
+        "tags": [""],
+        "name": "",
+        "coords": [], 
+        "location": "",
+        "type": "",
+        "descr": ""    
+    },
+    {
+        "tags": [""],
+        "name": "",
+        "coords": [], 
+        "location": "",
+        "type": "",
+        "descr": "" 
     }
 ]
