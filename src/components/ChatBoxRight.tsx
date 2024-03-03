@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Group, blankGroup } from "./ChatView";
+import React, { useState } from "react";
+import { Group } from "./ChatView";
 import { Chat } from "./ChatView";
 import { Form, Button } from "react-bootstrap";
 import { MessagesOutput } from "./ChatBoxMessage";
@@ -29,10 +29,11 @@ export function ChatBoxRight({group, groups, setCurrentGroup, setGroups}:ChatBox
     return (
       <div className="ChatViewRight">
         <MessagesOutput chatlog={group.chatlog}/>
-        <Form.Group>
+        <Form.Group className="messageType">
           <Form.Control placeholder="Message" value={currentMessage} onChange={handleFormEdit} />
+          <Button className="chatSubmit" onClick={handleSendMessage}>➡️</Button>
         </Form.Group>
-        <Button onClick={handleSendMessage}>➡️</Button>
+        <br></br>
       </div>
     );
 }
