@@ -1,5 +1,5 @@
-import { AccessLoc, LocType } from "./Interfaces/accessloc";
-import accessLocsAll from "./data/AllAccessLocs.json";
+import { AccessLoc } from "../Interfaces/accessloc";
+import accessLocsAll from "../data/AllAccessLocs.json";
 
 export const accessLocList: AccessLoc[] = accessLocsAll;
 

@@ -1,4 +1,4 @@
-export type LocType = "ramp" | "bathroom" | "bus Stop" | "elevator";
+export type LocType = "ramp" | "bathroom" | "bus stop" | "elevator";
 
 export interface AccessLoc{
     /* Each location can have multiple tags
@@ -10,7 +10,7 @@ export interface AccessLoc{
     coords: number[],
     /* which building on campus this is located in */
     location: string,
-    /* type of "ramp" | "bathroom" | "bus Stop" | "elevator" */
+    /* type of "ramp" | "bathroom" | "bus stop" | "elevator" */
     type: string,
     /* description of the location, long string */
     descr: string
