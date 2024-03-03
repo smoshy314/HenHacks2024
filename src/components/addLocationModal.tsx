@@ -13,9 +13,7 @@ export function AddLocationModal({backendSuccess}:AddLocationModalProps) {
     const [coords, setCoords] = useState({lat: 0, long: 0});
     const [showModal, setShowModal] = useState(false); // Add state for modal visibility
     console.log(backendSuccess);
-    function addLocation() {
-
-    }
+    
 
     const openModal = () => {
         setShowModal(true);

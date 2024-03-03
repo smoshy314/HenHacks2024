@@ -78,6 +78,7 @@ function App() {
     setMap(!isMap);
   }
   const [backendSuccess, setBackendSuccess] = useState(false);
+  setBackendSuccess(false)
   return (
     <div className="App">
       <HeaderComponent>
