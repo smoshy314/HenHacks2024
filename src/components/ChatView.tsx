@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import './ChatView.css';
 import { ChatBoxLeft } from './ChatBoxLeft';
 import { ChatBoxRight } from './ChatBoxRight';

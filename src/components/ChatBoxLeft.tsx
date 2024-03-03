@@ -1,6 +1,5 @@
 import React from "react";
 import { Group } from "./ChatView";
-import { Chat } from "./ChatView";
 import { GroupCard } from "./GroupCard";
 import { ChatBoxLeftProps } from "../Interfaces/chatBoxLeft";
 
