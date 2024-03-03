@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 
 export interface TextProps {
     text: string
@@ -41,9 +42,9 @@ export function TextToSpeech({text}:TextProps): JSX.Element {
 
   return (
     <div>
-      <button onClick={Play}>{stopped ? "Resume" : "Play"}</button>
-      <button onClick={Pause}>Pause</button>
-      <button onClick={Stop}>Stop</button>
+      <Button className="play-button" onClick={Play}>{stopped ? "Resume" : "Play"}</Button>
+      <Button onClick={Pause}>Pause</Button>
+      <Button onClick={Stop}>Stop</Button>
     </div>
   );
 };
